@@ -15,6 +15,9 @@ alias lf='la | grep'
 alias llf='ll | grep'
 alias pf='ps -e | grep'
 
+# pretty print path
+alias path='echo -e ${PATH//:/\\n}'
+
 # Kill process using certain port
 # USAGE: freeport PORT
 function freeport () {

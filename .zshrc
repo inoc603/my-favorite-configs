@@ -28,9 +28,9 @@ alias zshconfig="vim ~/.zshrc"
 alias ref='. ~/.zshrc'
 
 # Custom
-source ~/.zsh/shell/common.sh
-source ~/.zsh/shell/docker.sh
-source ~/.zsh/shell/mac.sh
-source ~/.zsh/shell/gfw.sh
-source ~/.zsh/shell/deps.sh
+source ~/.zsh/common.sh
+source ~/.zsh/docker.sh
+source ~/.zsh/mac.sh
+source ~/.zsh/gfw.sh
+source ~/.zsh/deps.sh
 
