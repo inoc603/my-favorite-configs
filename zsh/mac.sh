@@ -1,5 +1,6 @@
 # Open directory/file in Finder
 alias f='open -a Finder'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Load autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && \
