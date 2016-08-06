@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Open or create a tmux session, run vim and a pane running shell beneath it
+
+cmd=$(which tmux)
+dir=$(basename ${1:-$(pwd)})
+session="vz-${dir/\./\_}"
+
+# Load vim session if there is any
+vim_cmd="vim $1"
+if [ -e "${1:-$(pwd)}/Session.vim" ]; then
+  vim_cmd="$vim_cmd -S"
+fi
+
+if [ -z $cmd ]; then
+  echo "TMUX not installed"
+  exit 1
+fi
+
+$cmd has -t $session
+
+if [ $? != 0 ]; then
+  $cmd new -d -n vim -s $session "$vim_cmd"
+  $cmd splitw -v -l 10 -t $session "zsh"
+  $cmd selectw -t $session:0
+fi
+
+if [ "$1" == "-d" ]; then
+  echo $session
+else
+  $cmd att -t $session
+fi
