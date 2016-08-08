@@ -8,7 +8,7 @@ ENABLE_CORRECTION="false"
 source ~/.zshlocal
 
 # zsh plugins
-plugins=(git brew docker osx npm)
+plugins=(git extract brew docker osx npm)
 source $ZSH/oh-my-zsh.sh
 
 # ys theme without user and hostname

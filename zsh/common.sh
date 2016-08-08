@@ -1,6 +1,7 @@
 
 alias c='clear'
 
+# Fast navigating
 alias cd..='cd ../'
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -9,13 +10,14 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
 
+# List and find
 alias la='ls -a'
 alias ll='ls -FGlAhp'
 alias lf='la | grep'
 alias llf='ll | grep'
 alias pf='ps -e | grep'
 
-# pretty print path
+# Pretty print path
 alias path='echo -e ${PATH//:/\\n}'
 
 # Kill process using certain port
@@ -30,33 +32,8 @@ function checkport () {
   lsof -n -i:$1 | grep LISTEN
 }
 
-# Extract compressed file
-function extract()      # Handy Extract Program
-{
-	if [ -f $1  ] ; then
-		case $1 in
-		*.tar.bz2)   tar xvjf $1     ;;
-		*.tar.gz)    tar xvzf $1     ;;
-		*.bz2)       bunzip2 $1      ;;
-		*.rar)       unrar x $1      ;;
-		*.gz)        gunzip $1       ;;
-		*.tar)       tar xvf $1      ;;
-		*.tbz2)      tar xvjf $1     ;;
-		*.tgz)       tar xvzf $1     ;;
-		*.zip)       unzip $1        ;;
-		*.Z)         uncompress $1   ;;
-		*.7z)        7z x $1         ;;
-		*)           echo "'$1' cannot be extracted via >extract<" ;;
-		esac
-	else
-		echo "'$1' is not a valid file!"
-	fi
-
-}
-
 # Get IP adress on ethernet.
-function my_ip()
-{
+function my_ip() {
 	case `uname` in
 		Darwin)	interface='en0'		;;
 		*)	interface='eth0'	;;
@@ -72,3 +49,22 @@ function my_ip()
 		sed -e s/addr://)
 	echo ${MY_IP:-"Not connected"}
 }
+
+# Set local git user info to github account
+function me() {
+  if [ -z ${GITHUB_USER+x} ]
+  then
+    echo "GITHUB_USER is unset"
+    return 0
+  fi
+
+  if [ -z ${GITHUB_EMAIL+x} ]
+  then
+    echo "GITHUB_EMAIL is unset"
+    return 0
+  fi
+
+  git config user.name "$GITHUB_USER"
+  git config user.email "$GITHUB_EMAIL"
+}
+
