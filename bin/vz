@@ -20,10 +20,14 @@ fi
 $cmd has -t $session
 
 if [ $? != 0 ]; then
-  $cmd new -d -n vim -s $session "$vim_cmd"
+  $cmd new -d -n vim -s $session "zsh"
   $cmd splitw -v -l 10 -t $session "zsh"
   $cmd selectw -t $session:0
 fi
+
+# Send keys after zsh is runing. This ensures that the right vim gets called,
+# and the pane will not close if you exit vim
+$cmd send-keys -t 0 "vim" ENTER
 
 if [ "$1" == "-d" ]; then
   echo $session
