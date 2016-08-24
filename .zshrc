@@ -6,6 +6,7 @@ ENABLE_CORRECTION="false"
 
 # load local info like environment variables
 source ~/.zshlocal
+source ~/.zsh/deps.sh
 
 # zsh plugins
 plugins=(git extract brew docker osx npm)
@@ -32,5 +33,4 @@ source ~/.zsh/common.sh
 source ~/.zsh/docker.sh
 source ~/.zsh/mac.sh
 source ~/.zsh/gfw.sh
-source ~/.zsh/deps.sh
 

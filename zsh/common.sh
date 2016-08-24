@@ -20,6 +20,8 @@ alias pf='ps -e | grep'
 # Pretty print path
 alias path='echo -e ${PATH//:/\\n}'
 
+alias todo='nvim ~/.todo.md'
+
 # Kill process using certain port
 # USAGE: freeport PORT
 function freeport () {
