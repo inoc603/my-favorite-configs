@@ -5,10 +5,6 @@ export DISABLE_AUTO_TITLE='true'
 ZSH_THEME="ys"
 ENABLE_CORRECTION="false"
 
-# load local info like environment variables
-source ~/.zshlocal
-source ~/.zsh/deps.sh
-
 # zsh plugins
 plugins=(git extract brew docker osx npm)
 source $ZSH/oh-my-zsh.sh
@@ -27,6 +23,10 @@ alias zshconfig="vim ~/.zshrc"
 
 # refresh zsh settings
 alias ref='. ~/.zshrc'
+
+# load local info like environment variables
+source ~/.zsh/deps.sh
+source ~/.zshlocal
 
 # Custom
 source ~/.zsh/common.sh
