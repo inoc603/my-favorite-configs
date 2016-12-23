@@ -33,7 +33,7 @@ source ~/.zsh/common.sh
 source ~/.zsh/docker.sh
 source ~/.zsh/gfw.sh
 
-if [`uname` == "Darwin"]; then
+if [ `uname` == 'Darwin' ]; then
 	source ~/.zsh/mac.sh
 fi
 
