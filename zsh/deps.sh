@@ -10,3 +10,4 @@ export NVM_DIR="${HOME}/.nvm"
 
 # prefer locally installed binaries
 export PATH=node_modules/.bin:$PATH
+alias vim='nvim'

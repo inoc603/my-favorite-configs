@@ -71,7 +71,6 @@ function me() {
 }
 
 function gh() {
-  url=$1
   p=$(echo $1 | sed -n 's/^https:\/\/\(.*\)\.git$/\1/p')
   if [ -z $p ]
   then
