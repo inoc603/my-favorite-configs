@@ -8,6 +8,9 @@ function dpi () {
   pip install $@ -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 }
 
-# Use shadowsocks as proxy
+# Use shadowsocks as socks5 proxy
 alias ss='ALL_PROXY=socks5://localhost:1080'
+
+# Use priovxy as http proxy
+alias pp='HTTP_PROXY=localhost:8118'
 
