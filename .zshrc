@@ -4,9 +4,10 @@ export DISABLE_AUTO_TITLE='true'
 
 ZSH_THEME="ys"
 ENABLE_CORRECTION="false"
+DISABLE_UPDATE_PROMPT=true
 
 # zsh plugins
-plugins=(git extract brew docker osx npm)
+plugins=(git extract brew docker osx npm zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # ys theme without user and hostname
@@ -20,6 +21,8 @@ ${git_info}\
 
 # edit zsh config
 alias zshconfig="vim ~/.zshrc"
+
+alias sshconfig="vim ~/.ssh/config"
 
 # refresh zsh settings
 alias ref='. ~/.zshrc'
